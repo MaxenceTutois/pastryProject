@@ -24,8 +24,9 @@
             <div class="col-md-3">${pastry.name}</div>
             <div class="col-md-6">${pastry.description}</div>
             <div class="col-md-2">
-                <form id="${pastry.id}" method="post" action="${pageContext.request.contextPath}/pastry-list">
-                    <input type="submit" class="btn btn-primary"/>
+                <form method="post" action="${pageContext.request.contextPath}/delete-pastry">
+                    <input type="hidden" value="${pastry.id}" name="idPastry">
+                    <button class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </div>

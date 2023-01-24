@@ -21,7 +21,7 @@
             <!-- validate : valide le schéma de la base de données en correspondance avec les entités  -->
             <!-- update : met à jour le schéma en comparant les entités et le schéma actuel de la base de données  -->
             <!-- create : supprime le schéma de la base de données puis utilise les entités pour le recréer  -->
-            <!-- create-drop : effectue l'option create à la fermeture de l'EntityManagerFactory  -->
+            <!-- create-drop : effectue l'option create à la fermeture de l'JPAUtil  -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
