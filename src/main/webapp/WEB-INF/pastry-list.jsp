@@ -21,7 +21,7 @@
     <c:forEach items="${pastries}" var="pastry">
         <div class="row">
             <div class="col-md-1">${pastry.id}</div>
-            <div class="col-md-3">${pastry.name}</div>
+            <div class="col-md-3"><a href="/pastry-detail?pastryId=${pastry.id}">${pastry.name}</a></div>
             <div class="col-md-6">${pastry.description}</div>
             <div class="col-md-2">
                 <form method="post" action="${pageContext.request.contextPath}/delete-pastry">
