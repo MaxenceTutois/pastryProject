@@ -1,7 +1,7 @@
 package com.training.pastries.servlet;
 
-import com.training.pastries.dao.Dao;
 import com.training.pastries.dao.DaoFactory;
+import com.training.pastries.dao.PastryDao;
 import com.training.pastries.dao.entity.Pastry;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,7 +23,7 @@ public class SearchPastryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String search = req.getParameter("search");
 
-        Dao dao = DaoFactory.getPastryDao();
+        PastryDao dao = (PastryDao) DaoFactory.getPastryDao();
         Optional<Pastry> pastry = dao.getByName(search);
 
         if (pastry.isPresent()) {

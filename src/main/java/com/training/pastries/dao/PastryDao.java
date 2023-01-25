@@ -29,7 +29,6 @@ public class PastryDao implements Dao<Pastry> {
         return result;
     }
 
-    @Override
     public Optional<Pastry> getByName(String like) {
         EntityManager em = JPAUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction et = em.getTransaction();
