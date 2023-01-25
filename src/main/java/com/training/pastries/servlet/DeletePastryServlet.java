@@ -2,7 +2,6 @@ package com.training.pastries.servlet;
 
 import com.training.pastries.dao.Dao;
 import com.training.pastries.dao.DaoFactory;
-import com.training.pastries.dao.PastryDao;
 import com.training.pastries.dao.entity.Pastry;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
