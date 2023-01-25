@@ -27,6 +27,11 @@
     </nav>
 </header>
 <main class="container">
+    <div class="row">
+        <div class="col-offset-9 col-3 p-3">
+            <a href="/add-pastry" class="btn btn-primary">New pastry</a>
+        </div>
+    </div>
     <c:forEach items="${pastries}" var="pastry">
         <div class="row">
             <div class="col-md-1">${pastry.id}</div>
