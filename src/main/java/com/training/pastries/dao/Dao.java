@@ -6,9 +6,11 @@ import java.util.Optional;
 public interface Dao<T> {
     Optional<T> get(Long id);
 
+    Optional<T> getByName(String like);
+
     List<T> getAll();
 
-    void save(T t);
+    void create(T t);
 
     void update(T t);
 
