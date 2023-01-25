@@ -23,16 +23,11 @@ public class SearchPastryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String search = req.getParameter("search");
 
-        try {
-            Dao dao = DaoFactory.getPastryDao();
-            Optional<Pastry> pastry = dao.getByName(search);
+        Dao dao = DaoFactory.getPastryDao();
+        Optional<Pastry> pastry = dao.getByName(search);
 
-            if (pastry.isPresent()) {
-                resp.sendRedirect(req.getContextPath() + "/pastry-detail?pastryId=" + pastry.get().getId());
-            }
-        }
-        catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
+        if (pastry.isPresent()) {
+            resp.sendRedirect(req.getContextPath() + "/pastry-detail?pastryId=" + pastry.get().getId());
         }
     }
 }
