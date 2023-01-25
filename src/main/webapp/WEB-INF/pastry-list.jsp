@@ -15,7 +15,16 @@
 </head>
 <body>
 <header>
-    <h1>List of pastries</h1>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <h1>List of pastries</h1>
+                <form class="d-flex" role="search" method="post" action="${pageContext.request.contextPath}/search-pastry">
+                    <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 </header>
 <main class="container">
     <c:forEach items="${pastries}" var="pastry">

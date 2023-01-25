@@ -27,7 +27,7 @@ public class AddPastryServlet extends HttpServlet {
         Pastry pastry = new Pastry();
         pastry.setName(name);
         pastry.setDescription(desc);
-        DaoFactory.getPastryDao().save(pastry);
+        DaoFactory.getPastryDao().create(pastry);
 
         resp.sendRedirect("/pastry-list");
     }
