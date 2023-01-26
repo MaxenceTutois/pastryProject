@@ -21,8 +21,9 @@ public class SearchPastryServlet extends HttpServlet {
         PastryDao dao = (PastryDao) DaoFactory.getPastryDao();
         Optional<Pastry> pastry = dao.getByName(search);
 
-        if (pastry.isPresent()) {
+        if (pastry.isPresent())
             resp.sendRedirect(req.getContextPath() + "/pastry-detail?pastryId=" + pastry.get().getId());
-        }
+        else
+            resp.sendRedirect(req.getContextPath() + "/pastry-list");
     }
 }
