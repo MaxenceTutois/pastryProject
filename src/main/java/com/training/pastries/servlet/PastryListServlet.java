@@ -18,14 +18,20 @@ public class PastryListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // récupérer les pâtisseries avec JPA
-        List<Pastry> pastries = new PastryDao().getAll();
+        String search = req.getParameter("search");
+        if (search != null) {
+            resp.sendRedirect(req.getContextPath() + "/pastry-detail?name=" + search);
+        }
+        else {
+            // récupérer les pâtisseries avec JPA
+            List<Pastry> pastries = new PastryDao().getAll();
 
-        // mettre les données dans la vue
-        req.setAttribute("pastries", pastries);
+            // mettre les données dans la vue
+            req.setAttribute("pastries", pastries);
 
-        // retourner la ressource (vue + données)
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/pastry-list.jsp");
-        rd.forward(req, resp);
+            // retourner la ressource (vue + données)
+            RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/pastry-list.jsp");
+            rd.forward(req, resp);
+        }
     }
 }
