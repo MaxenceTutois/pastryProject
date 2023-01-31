@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class PastryDao implements Dao<Pastry> {
+public class PastryDao implements Dao<Long, Pastry> {
 
     @Override
     public Optional<Pastry> get(Long id) {
