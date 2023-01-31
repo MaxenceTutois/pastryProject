@@ -115,6 +115,8 @@ public class PastryController {
         if (pastry.getDescription() != null)
             p.setDescription(pastry.getDescription());
 
+        dao.update(p);
+
         return Response
                 .status(Response.Status.OK)
                 .build();
